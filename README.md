@@ -80,6 +80,7 @@ These codes illustrate how to use hybrid shared memory/vectorization algorithm, 
 These codes illustrate how to implement an optimal PIC algorithm on a single GPU as well as on multiple GPUs.  Both CUDA C and CUDA Fortran interoperable versions are available, where a Fortran code can call the CUDA C libraries and a C code can call the CUDA Fortran libraries.  For two-level-parallelism, the codes use a hybrid tiling scheme with SIMD vectorization, both written with NVIDIA’s CUDA programming environment.  The tiling algorithm used within a thread block on the GPU is the same as that used with OpenMP [[4](#ref4)].  Unlike the OpenMP implementation, however, each tile is controlled by a block of threads rather than a single thread, which requires a vectorized or data parallel implementation.  For three-level-parallelism, the codes use a hybrid tiling scheme with SIMD vectorization on each GPU, and domain decomposition connecting such GPUs implemented with MPI.  The algorithms used are described in Refs. [[2-4](#ref2)].
 
 <a name="whats-what"/>
+
 ## What's What
 
 Here's a table showing the names of the codes and their parallelism (ES means electrostatic, EM means electomagnetic, D means Darwin)
@@ -136,17 +137,17 @@ Here's a table showing the names of the codes and their parallelism (ES means el
 
 
 
-##Future Work
+## Future Work
 
 There are 3 different topics we plan to study. One is to create advanced versions of some of these skeleton codes to include features such as dynamic load balancing. Another is to implement additional 3D versions of some of the skeleton codes. Finally, we plan to explore alternative programming paradigms, such as OpenCL, OpenACC, or co-array Fortran, perhaps with other partners.
 
-##Support
+## Support
 
 This work is supported in part by the National Science Foundation, Department of Energy SciDAC program and the UCLA Institute for Digital Research and Innovation (IDRE). It is also closely co-ordinated with the activities of the NSF funded Particle-in-Cell and Kinetic Simulation Center (PICKSC) at UCLA (http://picksc.idre.ucla.edu/).
 
 
 
-##References
+## References
 
 <a name="ref1"/>
 [1] Viktor K. Decyk, "A Method for Passing Data Between C and Opaque Fortran90 Pointers," ACM Fortran Forum, vol. 27, no. 2, p. 2 (2008). [doi link](http://dx.doi.org/10.1145/1408643.1408644)
